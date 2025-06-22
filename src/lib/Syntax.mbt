@@ -30,13 +30,15 @@ pub enum Duration {
 pub struct Chord {
   duration : Duration
   notes : Array[Note] // [] -> rest note ; [n] -> single note n ; [...] -> chord
+  // ensures notes are sorted under the descending order of strings
 } derive(Show)
 
 ///|
 pub enum Slur {
+  Normal // 什么也没有
+  Slide // 滑弦
   Hammer // 击弦
   Pull // 勾弦
-  Slide // 滑弦
   Bend1 // 推弦半音
   Bend2 // 推弦全音
   Bend1R // 推弦半音复位
@@ -86,12 +88,19 @@ pub enum Mode {
   Locrian
 } derive(Show)
 
+///| 节拍
+pub struct Sig {
+  top : UInt
+  bot : Duration
+} derive(Show)
+
 ///|
 pub struct Track {
   title : String
   author : String
   key : Key
   mode : Mode
+  sig : Sig
   bpm : UInt
   sections : Array[Section]
 } derive(Show)
