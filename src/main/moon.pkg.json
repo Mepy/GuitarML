@@ -1,6 +1,9 @@
 {
   "is-main": true,
   "import": [
-    "AMepy/GuitarML/lib"
-  ]
+    "AMepy/GuitarML/lib",
+	"AMepy/GuitarML/parser",
+	"moonbitlang/x/fs"
+  ],
+  "warn-list": "-29"
 }

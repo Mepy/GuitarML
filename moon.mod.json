@@ -1,6 +1,12 @@
 {
   "name": "AMepy/GuitarML",
   "version": "0.1.0",
+  "deps": {
+    "moonbitlang/x": "0.4.36"
+  },
+  "bin-deps": {
+    "Mepy/Laurus": "0.2.1"
+  },
   "readme": "README.md",
   "repository": "",
   "license": "MIT",

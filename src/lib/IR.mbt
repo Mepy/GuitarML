@@ -85,7 +85,7 @@ pub fn Phrase::to_IR(self : Phrase, sig : Sig) -> IRPhrase {
   let { chords, slurs, .. } = self
   let (offsets, min_size, total_size) = {
     let offsets : Array[UInt] = Array::new(capacity=chords.length())
-    let mut min_size : UInt = D1.to_size()
+    let mut min_size : UInt = Duration::D1.to_size()
     let mut total_size : UInt = 0
     for chord in chords {
       let delta = chord.duration.to_size()
@@ -236,7 +236,6 @@ pub fn IRPhrase::to_svg(self : IRPhrase) -> String {
       match slur {
         Slide(x1~, y1~, x2~, y2~) =>
           output += "\t\t<line x1=\"\{x1}\" y1=\"\{y1}\" x2=\"\{x2}\" y2=\"\{y2}\" />\n"
-        _ => ()
       }
     }
   }
@@ -280,5 +279,5 @@ test "IRPhrase::to_IR/semmatsu" {
     ],
     lyric: "",
   }
-  println(phrase.to_IR({ top: 4, bot: H4 }).to_svg())
+  // println(phrase.to_IR({ top: 4, bot: H4 }).to_svg())
 }

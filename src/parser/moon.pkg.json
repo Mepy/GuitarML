@@ -1,0 +1,10 @@
+{
+	"pre-build": [
+		{
+			"command": "$mod_dir/.mooncakes/Mepy/Laurus/main $input",
+			"input": "guitarml.laurus",
+			"output": ""
+		}
+	],
+	"warn-list": "-1-2-6-15-18"
+}
